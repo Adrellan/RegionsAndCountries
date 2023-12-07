@@ -1,0 +1,48 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ag-theme-alpine {
+    margin: 0 auto; /* Középre igazítás */
+    width: auto; /* Automatikus szélesség */
+  }
+  
+
+.ag-grid-wrapper {
+    margin: 0 auto; /* Középre igazítás */
+    width: auto; /* Automatikus szélesség */
+  }
+  
+
+/* .container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    -ms-grid-rows: 100vh;
+    grid-template-rows: calc(100vh - 2rem);
+    width: 100%;
+  }
+.ag-theme-alpine {
+    justify-content: center;
+}
+.ag-theme-alpine .ag-header-cell-label {
+    font-style: italic;
+}
+
+.cell-wrap-text {
+    white-space: normal !important;
+}
+.ag-row .ag-cell {
+  display: flex;
+  justify-content: center; /* align horizontal 
+  align-items: center;
+} */

@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<div mat-dialog-content [formGroup]="regioForm">
+  <mat-form-field>
+    <input matInput formControlName="Regid" placeholder="Regio ID" readonly>
+  </mat-form-field>  
+  <mat-form-field>
+    <input matInput formControlName="Regname" placeholder="Regio Name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onSaveClick()">Save</button>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+</div>
+

@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  angular-app:
+    image: randc 
+    ports:
+      - "4200:4200" 
+
+  api:
+    image: gardenmanagerapi
+    ports:
+      - "8080:80" 
+    depends_on:
+      - sql-server
+
+  sql-server:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=yourStrong(!)Password
+      - MSSQL_PID=Developer 
+    ports:
+      - "1433:1433" 

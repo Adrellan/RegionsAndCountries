@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>{{ title }}</h1>
+<div mat-dialog-content [formGroup]="countryForm">
+  <mat-form-field>
+    <input matInput formControlName="Ctyid" placeholder="Country ID" [readonly]="isItUpdate">
+  </mat-form-field>  
+  <mat-form-field>
+    <input matInput formControlName="Ctyname" placeholder="Country Name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select formControlName="Ctyregid" placeholder="Region">
+      <mat-option *ngFor="let option of regionOptions" [value]="option.value">
+        {{ option.text }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onSaveClick()">Save</button>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+</div>
+

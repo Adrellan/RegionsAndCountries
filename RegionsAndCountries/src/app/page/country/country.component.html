@@ -1,0 +1,22 @@
+<app-table-controls
+  [dataType]="dataType"
+  (addButtonClicked)="onAddRowButtonClicked()"
+  (editButtonClicked)="onEditButtonClicked()"
+  (deleteButtonClicked)="onDeleteButtonClicked()"
+  (clearButtonClicked)="onClearSelectionClicked()">
+</app-table-controls>
+
+<div class="ag-grid-wrapper">
+  <ag-grid-angular 
+    class="ag-theme-alpine" 
+    [columnDefs]="colDefs"
+    [defaultColDef]="defaultColDef" 
+    [rowData]="rowData$ | async" 
+    [rowSelection]="'multiple'" 
+    [animateRows]="true"
+    [domLayout]="'autoHeight'" 
+    (gridReady)="onGridReady($event)" 
+    (cellClicked)="onCellClicked($event)"
+    (rowDoubleClicked)="onRowDoubleClicked($event)">
+  </ag-grid-angular>
+</div>
