@@ -1,0 +1,27 @@
+version: "4"
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: db
+    ports:
+      - "1430:1433"
+    environment:
+      - SA_PASSWORD=yourStrong(!)Password
+      - ACCEPT_EULA=Y
+  api:
+    build:
+      dockerfile: ./RegionsAndCountries-api/Dockerfile
+    ports:
+      - "5036:80"
+    depends_on:
+      - db
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+  client:
+      build:
+        context: ./RegionsAndCountries
+        dockerfile: Dockerfile
+      ports:
+        - "80:80"
+      depends_on:
+        - api
